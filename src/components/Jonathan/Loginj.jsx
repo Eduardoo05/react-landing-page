@@ -1,22 +1,23 @@
-import { useState } from "react"
+import { useState } from 'react'
 import { useForm } from "react-hook-form"
-import {createUserWithEmailAndPassword, getAuth} from 'firebase/auth'
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
 import {app} from '../../utils/firebase'
-import {useNavigate } from "react-router-dom"
-
+import { useNavigate } from 'react-router-dom'
+import {emailValidation,minPassword,maxPassword} from '../../utils/Validation'
 
 
 export const Loginj = () => {
-    const {register,handleSubmit,formState:{errors }} =useForm()
+    const {register ,handleSubmit,formState:{errors }} =useForm()
     const auth = getAuth(app)
     const navigate = useNavigate()
-    const [error, setError] = useState()
+    const [error,setError] = useState()
     
-    const createUser = async(data)=>{
+    
+    const loginUser = async(data)=>{
         try {
-            await createUserWithEmailAndPassword(auth,data.email,data.password)
+            await signInWithEmailAndPassword(auth, data.email , data.password )
             navigate('/login')
-        } catch (error) {
+        } catch(error){
             setError(error.message.replace('Firebase:',''))
         }
     }
@@ -26,7 +27,7 @@ export const Loginj = () => {
         <div className="card" style={{width: '18rem'}}>
             <div className="card-body">
                 <h5 className="card-title text-center">LOGIN USER</h5>
-                <form onSubmit={handleSubmit(createUser)}>
+                <form onSubmit={handleSubmit(loginUser)}>
                     <div className="mb-3">
                         <input 
                         type="text" 
@@ -57,6 +58,9 @@ export const Loginj = () => {
                         </button>
                     </div>
                 </form>
+                {
+                    error && <span className='text-danger'>{error}</span>
+                }
             </div>
         </div>
     </>
