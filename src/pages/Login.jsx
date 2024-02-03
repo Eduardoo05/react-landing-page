@@ -3,7 +3,10 @@ import {Loginj} from '../components/Jonathan/Loginj'
 export const Login = () => {
   return (
     <>
-      <Loginj/>
+      <h1 className="text-center text-white"> ¡Bienvenido!</h1>
+        <section>
+            <Loginj/>
+        </section>
     </>
     
   )
