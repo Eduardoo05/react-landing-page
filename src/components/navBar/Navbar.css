@@ -1,0 +1,62 @@
+.navbar {
+    position: relative;
+  }
+  
+  .menu-icon {
+    cursor: pointer;
+  }
+  
+  .bar {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 5px 0;
+  }
+  
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 100%;
+    background-color: rgba(128, 0, 128, 0.8); /* Morado */
+    z-index: 100;
+  }
+  
+  .menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 100%;
+    background-color: rgba(128, 0, 128, 0.8); /* Morado */
+    z-index: 101;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .show-menu {
+    transform: translateX(0%);
+  }
+  
+  .menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 50px 20px; /* Ajusta el margen superior e inferior según sea necesario */
+  }
+  
+  .menu ul li {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .overlay {
+      width: 20%;
+    }
+  
+    .menu {
+      width: 20%;
+    }
+  }
+  
