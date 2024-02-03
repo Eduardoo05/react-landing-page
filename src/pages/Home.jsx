@@ -9,7 +9,6 @@ export const Home = () => {
   return (
     <>
       <div className="navBar">
-        <Navbar></Navbar>
         <img src="https://kodigo.org/wp-content/uploads/2021/01/logo-kodigo-50.png" alt="kodigoLogo" />
         <div className="navButtons">
           <button>BOOTCAMPS</button>
@@ -24,7 +23,8 @@ export const Home = () => {
         <div className="hero">
           <div className='title'>
             <div className="heroText">
-              <h1>INVIERTE EN TU</h1>
+              <h1>INVIERTE EN </h1>
+              <h1>TU</h1>
               <h1 className="futuro">FUTURO</h1>
             </div>
             <p>Nuestros bootcamps te dejan listo para una posicion MID / JR para una compañia tech.</p>
@@ -47,7 +47,7 @@ export const Home = () => {
           <h2>¿QUÉ ES UN</h2>
           <p>BOOTCAMP?</p>
         </div>
-        <p>
+        <p className='bootcampInfo'>
           Los Bootcamps son cursos intensivos que dotan a los estudiantes de una excelente preparación para saltar al mercado laboral. Las características principales son las clases intensivas y un temario muy concentrado.
         </p>
       </div>
