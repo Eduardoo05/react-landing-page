@@ -15,8 +15,7 @@ export const Loginj = () => {
     
     const loginUser = async(data)=>{
         try {
-            const response = await signInWithEmailAndPassword(auth, data.email , data.password )
-            console.log(response)
+            await signInWithEmailAndPassword(auth, data.email , data.password )
             navigate('/auth/home')
         } catch(error){
             setError(error.message.replace('Firebase:',''))

@@ -4,6 +4,10 @@ import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 
+
+
+
+
 export const Home = () => {
   const auth = getAuth(app)
   const navigate = useNavigate()
@@ -13,7 +17,7 @@ export const Home = () => {
     
     const autentificacion = onAuthStateChanged(auth,(user) =>{
       if(user){
-        console.log("session iniciada")
+        console.log(" ")
       } else{
         navigate('/login')
       }
@@ -27,7 +31,7 @@ export const Home = () => {
   }, [auth,navigate])
 
   const logout= async() => {
-    const user=await signOut(auth)
+    await signOut(auth)
     navigate('/login')
   }
 
@@ -37,7 +41,7 @@ export const Home = () => {
   return (
     <>
       <h1>HOME</h1>
-      <button  type='button' onClick={logout} className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>CERRAR SESSION</button>
+      <button  type='button' onClick={logout} className='bg-blue-500 text-white font-bold py-2 px-4 rounded'>CERRAR SESSION</button>
     </>
   )
 }
