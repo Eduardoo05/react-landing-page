@@ -4,7 +4,7 @@ export const Login = () => {
   
   return (
     <>
-        <section className="flex justify-center h-screen bg-red-900">
+        <section className="flex items-center justify-center h-screen bg-cyan-100">
             <Loginj/>
         </section>
     </>

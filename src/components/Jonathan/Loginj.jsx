@@ -24,45 +24,42 @@ export const Loginj = () => {
 
   return (
     <>
-        <div className="bg-red-700 flex justify-center content-center" style={{width: '18rem'}}>
-            <div>
-                <h5 className="card-title text-center">LOGIN USER</h5>
+        <div className="bg-rose-600 rounded-2xl p-4 md:p-8 lg:p-10 flex justify-center items-center w-full max-w-xl">
+            <div className='w-full md:w-full lg:w-full md:rounded-md lg:rounded-md'>
+                <h5 className="text-2xl text-white text-center mb-6">INICIAR SESIÓN</h5>
                 <form onSubmit={handleSubmit(loginUser)}>
-                    <div className="mb-3">
-                        <input 
-                        type="text" 
-                        name="email"
-                        {...register('email',{required:'EMAIL IS REQUIRED', pattern:emailValidation})}
-                            className="form-control" 
-                            placeholder="Please, whirte your E-Mail"
+                    <div className="mb-5">
+                        <input
+                            type="text"
+                            name="email"
+                            {...register('email', { required: 'EL CORREO ELECTRÓNICO ES REQUERIDO', pattern: emailValidation })}
+                            className="w-full px-4 py-2 rounded-md border bg-white placeholder-gray-500 text-gray-700 focus:outline-none focus:ring focus:border-blue-300"
+                            placeholder="Por favor, escribe tu correo electrónico"
                         />
-                        {
-                            errors.email && <span className='text-danger'>{errors.email.message}</span>
-                        }
+                        {errors.email && <span className='text-red-500'>{errors.email.message}</span>}
                     </div>
 
-                    <div className="mb-3">
-                        <input type="password" 
-                        name="password"
-                        {...register('password',{required:'PASSWORD IS REQUIRED', minLength: minPassword, maxLength: maxPassword})}
-                            className="form-control" 
-                            placeholder="Please, whirte your Password"/>
-                        {
-                            errors.password && <span className='text-danger'>{errors.password.message}</span>
-                        }
+                    <div className="mb-5">
+                        <input
+                            type="password"
+                            name="password"
+                            {...register('password', { required: 'LA CONTRASEÑA ES REQUERIDA', minLength: minPassword, maxLength: maxPassword })}
+                            className="w-full px-4 py-2 rounded-md border bg-white placeholder-gray-500 text-gray-700 focus:outline-none focus:ring focus:border-blue-300"
+                            placeholder="Por favor, escribe tu contraseña"
+                        />
+                        {errors.password && <span className='text-red-500'>{errors.password.message}</span>}
                     </div>
 
-                    <div className="mb-3 d-grid gap-2">
-                        <button type="submit" className="btn btn-secondary">
-                            Login
+                    <div className="mb-6">
+                        <button type="submit" className="w-full bg-blue-500 text-white px-6 py-3 rounded-md focus:outline-none focus:ring focus:border-blue-300">
+                            Iniciar Sesión
                         </button>
                     </div>
                 </form>
-                {
-                    error && <span className='text-danger'>{error}</span>
-                }
+                {error && <span className='text-red-500'>{error}</span>}
             </div>
         </div>
+
     </>
   )
 }
