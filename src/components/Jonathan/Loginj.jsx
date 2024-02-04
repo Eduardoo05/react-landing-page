@@ -4,7 +4,7 @@ import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
 import {app} from '../../utils/firebase'
 import { useNavigate } from 'react-router-dom'
 import {emailValidation,minPassword,maxPassword} from '../../utils/Validation'
-
+import '../Jonathan/loginj.css'
 
 export const Loginj = () => {
     const {register ,handleSubmit,formState:{errors }} =useForm()
@@ -15,8 +15,9 @@ export const Loginj = () => {
     
     const loginUser = async(data)=>{
         try {
-            await signInWithEmailAndPassword(auth, data.email , data.password )
-            navigate('/login')
+            const response = await signInWithEmailAndPassword(auth, data.email , data.password )
+            console.log(response)
+            navigate('/auth/home')
         } catch(error){
             setError(error.message.replace('Firebase:',''))
         }
@@ -24,8 +25,8 @@ export const Loginj = () => {
 
   return (
     <>
-        <div className="card" style={{width: '18rem'}}>
-            <div className="card-body">
+        <div className="bg-red-700 flex justify-center content-center" style={{width: '18rem'}}>
+            <div>
                 <h5 className="card-title text-center">LOGIN USER</h5>
                 <form onSubmit={handleSubmit(loginUser)}>
                     <div className="mb-3">
