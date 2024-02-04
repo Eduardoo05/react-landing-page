@@ -1,33 +1,43 @@
-import {getAuth, onAuthStateChanged} from 'firebase/auth'
+import {getAuth, onAuthStateChanged,signOut} from 'firebase/auth'
 import {app} from '../utils/firebase'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-
-
-
-
 
 
 export const Home = () => {
   const auth = getAuth(app)
   const navigate = useNavigate()
+  const [loading,setLoading] = useState(true)
 
   useEffect(() =>{
-    const autentificacion = async() =>{
-      await onAuthStateChanged(auth,(user) =>{
-        if (user) {
-          console.log("estas logueado")
-        }else{
-          navigate('/login')
-        }
-      })
-    }
-    autentificacion()
-  }, [])
+    
+    const autentificacion = onAuthStateChanged(auth,(user) =>{
+      if(user){
+        console.log("session iniciada")
+      } else{
+        navigate('/login')
+      }
+      setLoading(false)
+    })
 
+    return() =>{
+      autentificacion()
+    }
+
+  }, [auth,navigate])
+
+  const logout= async() => {
+    const user=await signOut(auth)
+    navigate('/login')
+  }
+
+  if(loading) return <h1>Cargando...</h1>
 
 
   return (
-    <div>Home</div>
+    <>
+      <h1>HOME</h1>
+      <button  type='button' onClick={logout} className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>CERRAR SESSION</button>
+    </>
   )
 }
