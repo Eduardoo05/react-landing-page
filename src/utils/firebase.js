@@ -6,12 +6,12 @@ import { initializeApp } from "firebase/app";
 // Your web app's Firebase configuration
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCTc6qhadQ88BgnhzIMnQTu3_U3qXXZNjE",
-  authDomain: "my-ecommerce-2d013.firebaseapp.com",
-  projectId: "my-ecommerce-2d013",
-  storageBucket: "my-ecommerce-2d013.appspot.com",
-  messagingSenderId: "562864059031",
-  appId: "1:562864059031:web:371d78046cd0f220966fd2"
+  apiKey: import.meta.env.VITE_API_KEY,
+  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+  projectId: "landing-page-react-kodigo",
+  storageBucket: "landing-page-react-kodigo.appspot.com",
+  messagingSenderId: "403572880486",
+  appId: "1:403572880486:web : 1f520b301057d7c7d129a7"
 };
 
 

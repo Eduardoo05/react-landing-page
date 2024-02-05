@@ -24,7 +24,7 @@ export const Loginj = () => {
 
   return (
     <>
-        <div className="bg-rose-600 rounded-2xl p-4 md:p-8 lg:p-10 flex justify-center items-center w-full max-w-xl">
+        <div className="bg-amber-600 rounded-2xl p-4 md:p-8 lg:p-10 flex justify-center items-center w-full max-w-xl">
             <div className='w-full md:w-full lg:w-full md:rounded-md lg:rounded-md'>
                 <h5 className="text-2xl text-white text-center mb-6">INICIAR SESIÓN</h5>
                 <form onSubmit={handleSubmit(loginUser)}>
@@ -51,7 +51,7 @@ export const Loginj = () => {
                     </div>
 
                     <div className="mb-6">
-                        <button type="submit" className="w-full bg-blue-500 text-white px-6 py-3 rounded-md focus:outline-none focus:ring focus:border-blue-300">
+                        <button type="submit" className="w-full bg-green-900 text-white px-6 py-3 rounded-md focus:outline-none focus:ring focus:border-blue-300">
                             Iniciar Sesión
                         </button>
                     </div>
