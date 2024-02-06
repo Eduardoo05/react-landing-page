@@ -1,0 +1,159 @@
+.signup-section {
+    background: #ff00cc;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom left, #333399, #ff00cc);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom left, #333399, #ff00cc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+/* From uiverse.io by @Ali-Tahmazi99  Estilo de botón para registrarse*/
+.signup-btn {
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid #03045e;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease-in;
+    z-index: 1;
+   }
+   
+   .signup-btn::before,
+   .signup-btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 100%;
+    transform: skew(15deg);
+    transition: all 0.5s;
+    overflow: hidden;
+    z-index: -1;
+   }
+   
+   .signup-btn::before {
+    left: -10px;
+    background: #ff00cc;
+   }
+   
+   .signup-btn::after {
+    right: -10px;
+    background: #333399;
+   }
+   
+   .signup-btn:hover::before,
+   .signup-btn:hover::after {
+    width: 58%;
+   }
+   
+   .signup-btn:hover span {
+    color: #ffffff;
+    transition: 0.3s;
+   }
+   
+   .signup-btn span {
+    color: #03045e;
+    font-size: 18px;
+    transition: all 0.3s ease-in;
+   }
+
+/* Estilo de botón para ir al login*/
+   .login-btn {
+    --primary-color: #333399;
+    --secondary-color: #fff;
+    --hover-color: #ff00cc;
+    --arrow-width: 10px;
+    --arrow-stroke: 2px;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 20px;
+    color: var(--secondary-color);
+    padding: 0.5em 1em;
+    background: var(--primary-color);
+    display: flex;
+    transition: 0.2s background;
+    align-items: center;
+    gap: 0.6em;
+    font-weight: bold;
+    font-size: smaller;
+  }
+  
+  .login-btn .arrow-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .login-btn .arrow {
+    margin-top: 1px;
+    width: var(--arrow-width);
+    background: var(--primary-color);
+    height: var(--arrow-stroke);
+    position: relative;
+    transition: 0.2s;
+  }
+  
+  .login-btn .arrow::before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    border: solid var(--secondary-color);
+    border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+    display: inline-block;
+    top: -3px;
+    right: 3px;
+    transition: 0.2s;
+    padding: 3px;
+    transform: rotate(-45deg);
+  }
+  
+  .login-btn:hover {
+    background-color: var(--hover-color);
+  }
+  
+  .login-btn:hover .arrow {
+    background: var(--secondary-color);
+  }
+  
+  .login-btn:hover .arrow:before {
+    right: 0;
+  }
+
+/*Estilo de banner Kodigo*/
+
+.block-animation {
+  position: relative;
+  margin: 1rem auto 0;
+  width: 40rem;
+  height: 15rem;
+  background: linear-gradient(0deg, #000, #272727);
+}
+
+.block-animation:before, .block-animation:after {
+  content: '';
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094, 
+    #0000ff, #00ff00,#ffff00, #ff0000);
+  background-size: 400%;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  z-index: -1;
+  animation: steam 20s linear infinite;
+}
+
+@keyframes steam {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.block-animation:after {
+  filter: blur(50px);
+}
