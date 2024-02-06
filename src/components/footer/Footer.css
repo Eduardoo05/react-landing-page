@@ -1,0 +1,38 @@
+.footerContainer,
+.footerContainer .cartaFooter .images{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+}
+.footerContainer .cartaFooter .images .image2{
+    height: 33px;
+}
+
+.footerContainer{
+    flex-direction: column;
+    height: 250px;
+    background-image: linear-gradient(-25deg, 
+        rgb(231, 110, 18), 
+        rgb(98, 31, 255)
+    );
+}
+
+.footerContainer .cartaFooter{
+    display: flex;   
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+    background-color: white;
+    border-radius: 20px;
+    height: 180px;
+}
+
+.footerContainer .cartaFooter p{
+    width: 80%;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+}

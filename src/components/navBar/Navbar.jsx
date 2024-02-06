@@ -4,12 +4,6 @@ import './Navbar.css';
 import './Navbar.css'; // Archivo de estilos para el navbar
 export const Navbar = () => {
 
-  const opcionUno = 'OPCION 1'
-  const opcionDos = 'OPCION 2'
-  const opcionTres = 'OPCION 3'
-  const opcionCuatro = 'OPCION 4'
-
-
   const [abierto, setAbierto] = useState(false);
   const [ocultar, setOcultar] = useState(false)
 
@@ -34,13 +28,11 @@ export const Navbar = () => {
       <div className="navBar">
 
         <img src="https://kodigo.org/wp-content/uploads/2021/01/logo-kodigo-50.png" alt="kodigoLogo" />
-        <div className="navButtons">
-          <button>{opcionUno}</button>
-          <button>{opcionDos}</button>
-          <button>{opcionTres}</button>
-          <button>{opcionCuatro}</button>
+        
+        <div className='botonesBonitos'>
+          <button className="logIn">Log In</button>
+          <button className="signIn">Sign In</button>
         </div>
-        <button className="aplica">APLICA</button>
 
       </div>
 
@@ -64,11 +56,11 @@ export const Navbar = () => {
           <div className='menuNav'>
 
             <img src="https://kodigo.org/wp-content/uploads/2021/01/KODIGO_LOGO-FINAL-AF_Mesa-de-trabajo-1-copia.png" alt="kodigoLogo" />
+
             <ul>
-              <li>{opcionUno}</li>
-              <li>{opcionDos}</li>
-              <li>{opcionTres}</li>
-              <li>{opcionCuatro}</li>
+              <li>Sign In</li>
+              <li>Log In</li>
+              <li>Nuestros bootcamps</li>
             </ul>
 
           </div> 

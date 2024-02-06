@@ -1,4 +1,5 @@
-import {Navbar} from '../components/navBar/Navbar'
+import { Footer } from '../components/footer/Footer'
+import { Navbar } from '../components/navBar/Navbar'
 import './Home.css'
 
 export const Home = () => {
@@ -21,7 +22,7 @@ export const Home = () => {
             <p>Nuestros bootcamps te dejan listo para una posicion MID / JR para una compañia tech.</p>
             <button>APLICA</button>
           </div>
-          <div className='subHero'>
+          <div className='somosKodigo'>
             <div className='title'>
               <h1 className='somos'>SOMOS</h1>
               <img src="https://kodigo.org/wp-content/uploads/2023/02/Asset-2.png" alt="kodigoLogo" />
@@ -44,10 +45,23 @@ export const Home = () => {
       </div>
       <div className='nuestros'>
         <div className='tittle'>
-          <h1>BOOTCAMPS KODIGO</h1>
-          <p>conoce nuestra oferta académica</p>
+          <div className='section section1'>
+            <div className='foto'>
+              <div className='gradient'></div>
+            </div>
+          </div>
+          
+          
+          <div className='section section2'>
+            <h1>BOOTCAMPS KODIGO</h1>
+            <p>conoce nuestra oferta académica</p>
+            <button>Saber más</button>
+          </div>
+          
         </div>
       </div>
+
+      <Footer></Footer>
     </>
   )
 }

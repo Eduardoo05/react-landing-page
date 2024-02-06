@@ -3,35 +3,21 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 55px;
+  height: 70px;
   padding: 0px 40px;
   position: fixed;
   background-color: white;
   width: 100vw;
 }
+
 .navBar img{
   height: 50%;
   width: auto;
 }
-.navButtons{
-  display: none;
-}
 
-.aplica{
-  margin-right: 40px;
-  color: white;
-  background-color: rgb(255, 111, 0);
-  width: 100px;
-  height: 50px;
-  border-radius: 15px;
-  font-weight: 700;
-  transition: 0.3s ease;
-  display: none;
-}
 
-.aplica:hover{
-  background-color: rgb(100, 255, 240);
-  color: rgb(111, 0, 144);
+.botonesBonitos{
+  display: none;
 }
 
 /*===================== Menu hamburguesa ====================*/
@@ -41,12 +27,12 @@
   position: fixed;
 }
 
-/*Espacio que ocupa el icono*/
+/*Icono*/
 .menuBurger .icon{
   background-color: rgba(0, 255, 255, 0);
   width: 35px;
   height: 35px;
-  margin: 10px 10px 10px 20px;
+  margin: 17px 10px 10px 20px;
   cursor: pointer;
   
 
@@ -112,17 +98,17 @@
   /*Botones del menu escondido*/
   border-width: 6px;
   border-color: rgb(9, 14, 73);
-  padding: 10px 0px;
+  padding: 10px 0px 10px 30px;
   background-color: rgba(0, 21, 74, 0);
-  font-weight: 600;
+  font-weight: 300;
   color: white;
   cursor: pointer;
   text-align: left;
-  padding-left: 40px;
+  
 }
 
 
-/*Cerrar menu*/
+/*Cerrar menu div*/
 .menuBurger .menu .cerrar{
   background-color: rgba(0, 255, 26, 0);
   width: 33%;
@@ -133,13 +119,13 @@
   align-items: end;
 }
 
+/*Boton para cerrar*/
 .menuBurger .menu .cerrar .line{
   background-color: black;
   width: 40px;
   height: 4px;
   position: absolute;
-  margin-top: 26px;
-  margin-right: 22px;
+  margin: 31px 16px 0px 0px;
   border-radius: 10px;
   opacity: 1;
   transition: opacity 2s ease;
@@ -159,7 +145,70 @@
   transform: translateX(100vw);
 }
 
+.ocultando + body{
+  overflow-y: hidden;
+}
+
 .ocultando {
   display: none;
   
 }
+
+/*======================= Responsive =====================*/
+
+
+
+/* Estilos para pantallas más grandes */
+@media only screen and (min-width: 1100px) {
+  /* Aquí van los estilos para pantallas más grandes */
+
+  .botonesBonitos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 18px;
+    gap: 20px;
+    width: auto;
+  }
+  
+  .botonesBonitos .signIn,
+  .botonesBonitos .logIn{
+    color: white;
+    background-color: rgb(255, 111, 0);
+    width: 100px;
+    height: 45px;
+    border-radius: 15px;
+    font-weight: 700;
+    transition: 0.3s ease;
+  }
+  
+  .botonesBonitos .logIn{
+    background-color: rgb(151, 151, 151);
+  }
+
+  .signIn:hover{
+    background-color: rgb(100, 255, 240);
+    color: rgb(111, 0, 144);
+  }
+
+  .logIn:hover{
+    background-color: rgb(176, 176, 176);
+    
+  }
+
+  .navBar .aplica,
+  .navBar .navButtons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .menuBurger{
+    display: none;
+  }
+
+  .navBar{
+    justify-content: space-between;
+  }
+}
+

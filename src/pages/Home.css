@@ -5,6 +5,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    
 }
 
 .hero{
@@ -50,16 +51,10 @@
 }
 
 .title button{
-    background-color: rgb(100, 255, 240);
-    padding: 3px;
-    border-radius: 10px;
-    margin: 30px;
-}
-
-.title button{
     background-color: rgba(110, 0, 144, 0);
     color: rgb(100, 255, 240);
     padding: 8px 20px;
+    margin: 30px;
     font-size: 20px;
     font-weight: 700;
     border-radius: 15px;
@@ -73,23 +68,24 @@
     background-color: rgb(100, 255, 240);
 }
 
-.subHero{
+.somosKodigo{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: left;
     width: 80vw;
+    max-width: 1140px;
     background-color: white;
     border-radius: 30px;
     padding: 20px;
     margin-bottom: 100px;
 }
 
-.subHero .title img{
+.somosKodigo .title img{
     height: 52px;
 }
 
-.subHero .title{
+.somosKodigo .title{
     display: flex;
     flex-direction: column;
     justify-content: left;
@@ -101,7 +97,7 @@
     line-height: 1;
 }
 
-.subHero h1{
+.somosKodigo h1{
     color: rgb(111, 0, 144);
 }
 
@@ -118,12 +114,12 @@
     padding: 18px 18px 0px 18px;
 }
 
-.subHero img{
+.somosKodigo img{
     height: 80px;
     padding: 0px 18px;
 }
 
-.subHero p{
+.somosKodigo p{
     line-height: 1.3;
     font-size: 19px;
     font-weight: 350;
@@ -168,32 +164,165 @@
     font-size: 40px;
 }
 
-.nuestros{
-    background-color: rgb(224, 224, 224);
+
+.nuestros,
+.nuestros .tittle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(78, 0, 161);
 }
 
-.nuestros .tittle h1{
 
+.nuestros .tittle h1{
+    display: flex;
+    align-items: center;
+    font-size: 50px;
+    height: 100px;
+    width: 330px;
+    line-height: 1;
+    text-align: center;
+    font-weight: 700;
+    color: rgb(56, 194, 183);
 }
 
 .nuestros .tittle p{
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    height: 100px;
+    width: 250px;
+    line-height: 1.2;
+    text-align: center;
+    font-weight: 300;
+    color: white;
     
+}
+
+.nuestros .tittle .section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 360px;
+
+}
+
+.nuestros .tittle .section .foto{
+    width: 100vw;
+    height: 360px;
+    background-image: url('https://www.shutterstock.com/image-photo/smart-young-students-studying-university-600nw-2102451307.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.nuestros .tittle .section .foto .gradient{
+    background-image: linear-gradient( to top, 
+        rgb(78, 0, 161),
+        rgba(55, 0, 114, 0)
+        
+    );
+    width: 100vw;
+    height: 360px;
+}
+
+.section2{
+    background-image: linear-gradient(to bottom, 
+        rgb(78, 0, 161),
+        rgb(55, 0, 114)
+    );
+    width: 100vw;
+}
+
+.nuestros .tittle button{
+    background-color: rgb(0, 159, 170);
+    color: rgb(255, 255, 255);
+    padding: 12px 30px;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 15px;
+    transition: 0.2s ease;
+}
+
+.nuestros .tittle button:hover{
+    background-color: rgb(0, 172, 185);
 }
 
 /*======================================MEDIA QUERYS======================================*/
 
 /* Estilos para pantallas de hasta 600px de ancho */
-@media screen and (max-width: 600px) {
-    /* Estilos específicos para pantallas pequeñas */
-    .elemento {
-        width: 100%; /* Por ejemplo, ajusta el ancho al 100% */
+@media screen and (min-width: 750px) {
+
+    .bootcamp{
+        flex-direction: row;
+        gap: 90px;
+        height: 300px;
+    }
+
+    .bootcampInfo{
+        width: 40%;
+        font-size: 20px;
+    }
+
+    .nuestros
+    .tittle{
+        width: 100vw;
+        display: flex;
+        align-items: start;
+        justify-content: start;
+        flex-direction: row;
+        background-color: rgb(78, 0, 161);
+    }
+
+    .nuestros .tittle .section{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 360px;
+        
+    }
+
+    .nuestros .tittle .section1{
+        width: 50%
+    }
+    .nuestros .tittle .section2{
+        width: 50%;
+        align-items: start;
+        padding-left: 40px;
+    }
+
+    .nuestros .tittle .section2 h1,
+    .nuestros .tittle .section2 p{
+        text-align: start;
+    }
+    
+    .nuestros .tittle .section .foto{
+        width: 100%;
+        height: 360px;
+        background-image: url('https://www.shutterstock.com/image-photo/smart-young-students-studying-university-600nw-2102451307.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+    
+    .nuestros .tittle .section .foto .gradient{
+        background-image: linear-gradient( to left, 
+            rgb(78, 0, 161),
+            rgba(55, 0, 114, 0)
+            
+        );
+        width: 100%;
+        height: 360px;
+    }
+    
+    .section2{
+        background-image: linear-gradient(to right, 
+            rgb(78, 0, 161),
+            rgb(55, 0, 114)
+        );
     }
 }
 
-/* Estilos para pantallas de 601px de ancho en adelante */
-@media screen and (min-width: 601px) {
-    /* Estilos específicos para pantallas más grandes */
-    .elemento {
-        width: 50%; /* Por ejemplo, ajusta el ancho al 50% */
-    }
-}
+
