@@ -1,6 +1,16 @@
+import {Loginj} from '../components/Jonathan/Loginj'
 
 export const Login = () => {
+  
+
+  
   return (
-    <div>Login</div>
+    <>
+        <section className="flex items-center justify-center h-screen bg-teal-900">
+            <Loginj/>
+        </section>
+    </>
+    
   )
 }
+
