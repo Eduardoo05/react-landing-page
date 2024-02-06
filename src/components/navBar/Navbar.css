@@ -1,62 +1,165 @@
-.navbar {
-    position: relative;
-  }
+.navBar{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 55px;
+  padding: 0px 40px;
+  position: fixed;
+  background-color: white;
+  width: 100vw;
+}
+.navBar img{
+  height: 50%;
+  width: auto;
+}
+.navButtons{
+  display: none;
+}
+
+.aplica{
+  margin-right: 40px;
+  color: white;
+  background-color: rgb(255, 111, 0);
+  width: 100px;
+  height: 50px;
+  border-radius: 15px;
+  font-weight: 700;
+  transition: 0.3s ease;
+  display: none;
+}
+
+.aplica:hover{
+  background-color: rgb(100, 255, 240);
+  color: rgb(111, 0, 144);
+}
+
+/*===================== Menu hamburguesa ====================*/
+
+.menuBurger{
+  height: 55px;
+  position: fixed;
+}
+
+/*Espacio que ocupa el icono*/
+.menuBurger .icon{
+  background-color: rgba(0, 255, 255, 0);
+  width: 35px;
+  height: 35px;
+  margin: 10px 10px 10px 20px;
+  cursor: pointer;
   
-  .menu-icon {
-    cursor: pointer;
-  }
+
+  /*Espacio entre lineas*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+}
+
+/*Lineas*/
+.menuBurger .icon .line{
+  background-color: black;
+  width: 30px;
+  height: 4px;
+  border-radius: 4px;
+}
+
+/*Contenedor del menu escondido*/
+.menuBurger .menu{
+  /*Tamaño y color*/
+  background-color: rgba(0, 0, 255, 0);
+  width: 100vw;
+  height: 100vh;
+  transition: 0.3s ease;
+  position: absolute;
+  left: -100vw;
+  top: 0px;
+
+  /*Para los hijos*/
+  display: flex;
+  flex-direction: row;
+
+}
+
+/*Menu escondido*/
+.menuBurger .menu .menuNav{
+  /*Color y tamaño del Nav*/
+  background-color: rgb(9, 14, 73);
+  width: 80%;
+  height: 100%;
+  max-width: 349px;
+}
+
+/*Imagen del menu*/
+.menuBurger .menu .menuNav img{
+  height: 70px;
+  margin: 30px 0px 0px 30px;
+  cursor: pointer;
+}
+
+.menuBurger .menu .menuNav ul{
+  /*Estilos de los botones*/
+  display: flex;
+  flex-direction: column;
+  font-size: 22px;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.menuBurger .menu .menuNav ul li{
+  /*Botones del menu escondido*/
+  border-width: 6px;
+  border-color: rgb(9, 14, 73);
+  padding: 10px 0px;
+  background-color: rgba(0, 21, 74, 0);
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  text-align: left;
+  padding-left: 40px;
+}
+
+
+/*Cerrar menu*/
+.menuBurger .menu .cerrar{
+  background-color: rgba(0, 255, 26, 0);
+  width: 33%;
+  height: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.menuBurger .menu .cerrar .line{
+  background-color: black;
+  width: 40px;
+  height: 4px;
+  position: absolute;
+  margin-top: 26px;
+  margin-right: 22px;
+  border-radius: 10px;
+  opacity: 1;
+  transition: opacity 2s ease;
+}
+
+.menuBurger .menu .cerrar .lineOne{
+  transform: rotate(45deg);
+}
+
+.menuBurger .menu .cerrar .lineTwo{
+  transform: rotate(-45deg);
+}
+
+/*======================= Comportamiento de los elementos ======================*/
+
+.mover-derecha{
+  transform: translateX(100vw);
+}
+
+.ocultando {
+  display: none;
   
-  .bar {
-    width: 25px;
-    height: 3px;
-    background-color: black;
-    margin: 5px 0;
-  }
-  
-  .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 80%;
-    height: 100%;
-    background-color: rgba(128, 0, 128, 0.8); /* Morado */
-    z-index: 100;
-  }
-  
-  .menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 80%;
-    height: 100%;
-    background-color: rgba(128, 0, 128, 0.8); /* Morado */
-    z-index: 101;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .show-menu {
-    transform: translateX(0%);
-  }
-  
-  .menu ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 50px 20px; /* Ajusta el margen superior e inferior según sea necesario */
-  }
-  
-  .menu ul li {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  @media screen and (min-width: 768px) {
-    .overlay {
-      width: 20%;
-    }
-  
-    .menu {
-      width: 20%;
-    }
-  }
-  
+}

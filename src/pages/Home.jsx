@@ -8,16 +8,7 @@ export const Home = () => {
 
   return (
     <>
-      <div className="navBar">
-        <img src="https://kodigo.org/wp-content/uploads/2021/01/logo-kodigo-50.png" alt="kodigoLogo" />
-        <div className="navButtons">
-          <button>BOOTCAMPS</button>
-          <button>ALIANZAS</button>
-          <button>NOSOTROS</button>
-          <button>CAREERS</button>
-        </div>
-        <button className="aplica">APLICA</button>
-      </div>
+      <Navbar></Navbar>
 
       <div className='heroBack'>
         <div className="hero">
@@ -56,121 +47,7 @@ export const Home = () => {
           <h1>BOOTCAMPS KODIGO</h1>
           <p>conoce nuestra oferta académica</p>
         </div>
-        <div>
-          <div>
-            <img src="" alt="" />
-            <h1>.NET Developer</h1>
-            <p>INTERMEDIO</p>
-            <div>
-              <img src="" alt="" />
-              <img src="" alt="" />
-              <img src="" alt="" />
-            </div>
-            <button>ME INTERESA</button>
-          </div>
-          <div>
-            <img src="" alt="" />
-            <h1>Full Stack Jr.</h1>
-            <p>INTERMEDIO</p>
-          <div>
-          <img src="" alt="" />
-          <img src="" alt="" />
-          <img src="" alt="" />
-          <img src="" alt="" />
-          <img src="" alt="" />
-          <img src="" alt="" />
-          <img src="" alt="" />
-        </div>
-        <button>ME INTERESA</button>
       </div>
-      <div>
-        <img src="" alt="" />
-        <h1>Python Developer</h1>
-        <p>INTERMEDIO</p>
-        <div>
-          <img src="" alt="" />
-          <img src="" alt="" />
-          <img src="" alt="" />
-        </div>
-        <button>ME INTERESA</button>
-      </div>
-      <div>
-        <img src="" alt="" />
-        <h1>Java Developer</h1>
-        <p>INTERMEDIO</p>
-        <div>
-          <img src="" alt="" />
-        </div>
-        <button>ME INTERESA</button>
-      </div>
-      <div>
-        <img src="" alt="" />
-        <h1>Data Analyst Jr</h1>
-        <p>INTERMEDIO</p>
-        <div>
-          <img src="" alt="" />
-        </div>
-        <button>ME INTERESA</button>
-      </div>
-    </div>
-
-          <div>
-            <p>NUESTROS ALIADOS</p>
-            <div>
-              <img src="" alt="" />
-              <img src="" alt="" />
-              <img src="" alt="" />
-              <img src="" alt="" />
-              <img src="" alt="" />
-              <img src="" alt="" />
-              <img src="" alt="" />
-              <img src="" alt="" />
-              <img src="" alt="" />
-              <img src="" alt="" />
-              <img src="" alt="" />
-              <img src="" alt="" />
-              <img src="" alt="" />
-              <img src="" alt="" />
-              <img src="" alt="" />
-              <img src="" alt="" />
-              <img src="" alt="" />
-              <img src="" alt="" />
-              <img src="" alt="" />
-              <img src="" alt="" />
-              <img src="" alt="" />
-              <img src="" alt="" />
-              <img src="" alt="" />
-              <img src="" alt="" />
-              <img src="" alt="" />
-              <img src="" alt="" />
-              <img src="" alt="" />
-              <img src="" alt="" />
-              <img src="" alt="" />
-              <img src="" alt="" />
-              <img src="" alt="" />
-              <img src="" alt="" />
-              <img src="" alt="" />
-              <img src="" alt="" />
-              <img src="" alt="" />
-              <img src="" alt="" />
-              <img src="" alt="" />
-              <img src="" alt="" />
-              <img src="" alt="" />
-              <img src="" alt="" />
-              <img src="" alt="" />
-              <img src="" alt="" />
-              <img src="" alt="" />
-              <img src="" alt="" />
-              <img src="" alt="" />
-              <img src="" alt="" />
-              <img src="" alt="" />
-              <img src="" alt="" />
-              <img src="" alt="" />
-            </div>
-           </div>
-        <div>
-      </div>
-    </div>
     </>
   )
 }

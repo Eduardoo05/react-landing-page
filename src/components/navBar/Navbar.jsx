@@ -1,38 +1,87 @@
 import { useState } from 'react';
-import './Navbar.css';
+import './Navbar.css'; 
 
-export function Navbar() {
-  const [menuVisible, setMenuVisible] = useState(false);
+import './Navbar.css'; // Archivo de estilos para el navbar
+export const Navbar = () => {
 
-  const toggleMenu = () => {
-    setMenuVisible(!menuVisible);
+  const opcionUno = 'OPCION 1'
+  const opcionDos = 'OPCION 2'
+  const opcionTres = 'OPCION 3'
+  const opcionCuatro = 'OPCION 4'
+
+
+  const [abierto, setAbierto] = useState(false);
+  const [ocultar, setOcultar] = useState(false)
+
+  const abrirCerrar = () => {
+    setAbierto(!abierto);
   };
 
-  const handleOverlayClick = () => {
-    setMenuVisible(false);
-  };
+  const ocultarMostrar = () =>{
+    setOcultar(!ocultar)
+  }
+
+  const handleMenu = () =>{
+    abrirCerrar()
+    ocultarMostrar()
+  }
 
   return (
-    <div className="navbar">
-      {!menuVisible && (
-        <div className="menu-icon" onClick={toggleMenu}>
-          <div className="bar"></div>
-          <div className="bar"></div>
-          <div className="bar"></div>
-        </div>
-      )}
-      {menuVisible && (
-        <div className="overlay" onClick={handleOverlayClick}></div>
-      )}
-      <div className={`menu ${menuVisible ? 'show-menu' : ''}`}>
-        {/* Aquí coloca tu contenido de menú */}
-        <ul>
-          <li>Elemento de menú 1</li>
-          <li>Elemento de menú 2</li>
-          <li>Elemento de menú 3</li>
-        </ul>
-      </div>
-    </div>
-  );
-}
+    <>
+      
+      {/* =========== Barra superior de navegación ============= */}
 
+      <div className="navBar">
+
+        <img src="https://kodigo.org/wp-content/uploads/2021/01/logo-kodigo-50.png" alt="kodigoLogo" />
+        <div className="navButtons">
+          <button>{opcionUno}</button>
+          <button>{opcionDos}</button>
+          <button>{opcionTres}</button>
+          <button>{opcionCuatro}</button>
+        </div>
+        <button className="aplica">APLICA</button>
+
+      </div>
+
+
+
+
+
+
+      {/* =========== Icono para el menu hamburguesa ============= */}
+
+      <div className='menuBurger'>
+
+        <div className={`icon ${ocultar ? 'ocultando' : ''}`} onClick={handleMenu}>
+          <div className='line'></div>
+          <div className='line'></div>
+          <div className='line'></div>
+        </div>
+
+        <div className={`menu ${abierto ? 'mover-derecha' : ''}`}>
+
+          <div className='menuNav'>
+
+            <img src="https://kodigo.org/wp-content/uploads/2021/01/KODIGO_LOGO-FINAL-AF_Mesa-de-trabajo-1-copia.png" alt="kodigoLogo" />
+            <ul>
+              <li>{opcionUno}</li>
+              <li>{opcionDos}</li>
+              <li>{opcionTres}</li>
+              <li>{opcionCuatro}</li>
+            </ul>
+
+          </div> 
+
+          <div className="cerrar" onClick={handleMenu}>
+            <div className={`line lineOne ${!ocultar ? 'ocultando' : ''}`}></div>
+            <div className={`line lineTwo ${!ocultar ? 'ocultando' : ''}`}></div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </>
+  )
+}
