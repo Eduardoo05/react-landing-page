@@ -3,6 +3,9 @@ import {getAuth, onAuthStateChanged,signOut} from 'firebase/auth'
 import {app} from '../utils/firebase'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { Navbar } from '../components/Javier/navBar/Navbar'
+import { Footer } from '../components/Javier/footer/Footer'
+import '../components/Javier/Home.css'
 
 export const Home = () => {
   const auth = getAuth(app)
