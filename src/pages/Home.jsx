@@ -1,10 +1,37 @@
-import { Footer } from '../components/footer/Footer'
-import { Navbar } from '../components/navBar/Navbar'
-import './Home.css'
+
+import {getAuth, onAuthStateChanged,signOut} from 'firebase/auth'
+import {app} from '../utils/firebase'
+import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export const Home = () => {
+  const auth = getAuth(app)
+  const navigate = useNavigate()
+  const [loading,setLoading] = useState(true)
 
+  useEffect(() =>{
+    
+    const autentificacion = onAuthStateChanged(auth,(user) =>{
+      if(user){
+        console.log(" ")
+      } else{
+        navigate('/login')
+      }
+      setLoading(false)
+    })
 
+    return() =>{
+      autentificacion()
+    }
+
+  }, [auth,navigate])
+
+  const logout= async() => {
+    await signOut(auth)
+    navigate('/login')
+  }
+
+  if(loading) return <h1>Cargando...</h1>
 
 
   return (
